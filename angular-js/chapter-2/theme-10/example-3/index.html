@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular.JS</title>
+        <link rel="stylesheet" href="css/mystyles.css">
+    </head>
+    <body>
+        <div ng-controller="QuestionController">
+            <div class="quest">
+                <h3>{{ question.text }}</h3>
+                <p>{{ question.author }}</p>
+                <p><i>{{ question.date }}</i></p>
+            </div>
+            <p>Введите ответчика: <input type="text" ng-model="member"></p>
+            <h3>Ответы</h3>
+            <div class="answers">
+                <div ng-repeat="a in question.answers | filter:{author:member}" class="answer">
+                    <div class="vote">
+                        <a class="vote-up" ng-click="voteUp(a)"></a>
+                        <span class="rate">{{ a.rate }}</span>
+                        <a class="vote-down" ng-click="voteDown(a)"></a>
+                    </div>
+                    <b>{{ a.text }}</b>
+                    <p>{{ a.author }}</p>
+                    <p><i>{{ a.date }}</i></p>
+                </div>
+            </div>
+        </div>
+        <script src="js/libs/angular.min.js"></script>
+        <script>var myApp = angular.module('myApp', []);</script>
+        <script src="js/controllers/QuestionController.js"></script>
+    </body>
+</html>

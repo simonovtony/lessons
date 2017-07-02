@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular.JS</title>
+    </head>
+    <body>
+        <div ng-controller="helloController">
+            <p><textarea ng-model="htmlcode"></textarea></p>
+            <p ng-bind-html="htmlcode"></p>
+        </div>
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/angular-sanitize.min.js"></script>
+        <script>
+            var myApp = angular.module('myApp', ['ngSanitize']);
+            myApp.controller('helloController', function ($scope) {
+                $scope.htmlcode = 'Директива <b>ng-bind-html</b>';
+            });
+        </script>
+    </body>
+</html>

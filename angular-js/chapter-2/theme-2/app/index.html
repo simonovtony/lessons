@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+</head>
+<body>
+    <!--<p>2 + 3 = {{ 2 + 3 }}</p>-->
+    <div ng-controller="phoneController">
+        <p>Название: {{ phone.name }}</p>
+        <p>Цена: {{ phone.price }}</p>
+        <p>Производитель: {{ phone.company.name }}</p>
+    </div>
+    <hr>
+    <div ng-controller="phoneController">
+        <p>Название: {{ phone.name }}</p>
+        <p>Цена: {{ phone.price }}</p>
+        <p>Производитель: {{ phone.company.name }}</p>
+    </div>
+    <div ng-controller="parentController">
+        <div ng-controller="firstChildController"></div>
+        <div ng-controller="secondChildController"></div>
+    </div>
+    <script src="js/libs/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', []);
+    </script>
+    <script src="js/controllers/phonesController.js"></script>
+</body>
+</html>

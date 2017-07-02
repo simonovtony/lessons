@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Amgular.JS</title>
+</head>
+<body>
+    <div ng-controller="myController as myCtrl">
+        <h3>{{ myCtrl.message }}</h3>
+        <p>{{ myCtrl.text }}</p>
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myController', function () {
+            this.message = 'myController';
+            this.text = 'Контроллер без $scope';
+        });
+    </script>
+</body>
+</html>

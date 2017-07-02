@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+</head>
+<body>
+    <p>Модуль: {{ moduleName }}</p>
+    <p>Сообщение: {{ message }}</p>
+    <script src="js/libs/angular.min.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+//        myApp.config(function ($rootScopeProvider) {
+//            $rootScopeProvider.digestTtl(15);
+//        });
+        myApp.run(function ($rootScope) {
+            $rootScope.moduleName = 'myApp';
+            $rootScope.message = 'Hello AngularJS';
+        });
+    </script>
+</body>
+</html>

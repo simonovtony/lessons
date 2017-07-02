@@ -1,0 +1,86 @@
+*** Angular.js ***
+
+1. Введение в Angular.JS
+    1) Что такое Angular.JS
+    2) Первое приложение на Angular.JS
+
+2. Основы Angular.JS
+    1) Модули
+    2) Контроллеры
+        - Наследование контроллеров
+        - Контроллеры без использования $scope
+    3) Обьект $scope
+        - $scope
+        - $rootScope
+    4) Директивы в Angular.JS.
+        - ng-repeat
+        - Встроенные переменные
+        - Обход внутренних массивов
+    5) Привязка данных
+        - ng-bind
+        - ng-bind-template
+        - ng-non-bindable
+        - ng-bind-html
+    6) Директивы шаблонов
+        - ng-include
+        - Динамическая загрузка представлений
+    7) Директива ng-switch
+        - ng-switch on="key"
+        - ng-switch-when="value"
+        - ng-switch-default
+    8) Директивы стилизации и управления элементами
+        - ng-class, ng-class, ng-class-even, ng-class-odd
+        - ng-show, ng-hide
+        - ng-if
+    9) Обработка событий
+        - ng-blur, ng-focus
+        - ng-change
+        - ng-submit
+        - ng-copy, ng-cut, ng-paste
+        - ng-click, ng-dblclick
+        - ng-mousedown, ng-mouseup, ng-mouseenter, ng-mouseleave, ng-mousemove
+        - ng-keyup, ng-keydown, ng-keypress
+    10) Фильтры {{ expression | filter }}
+        - Изменение регистра (uppercase, lowercase)
+        - Форматирование чисел (number:1)
+        - Форматирование валюты (currency:'RUB')
+        - Форматирование дат (date:'yyyy-MM-dd')
+        - Фильтры orderBy и limitTo (orderBy:sortparam, limitTo:2)
+        - Фильтр filter (filter:text, filter:{author:member})
+    11) Создание собственных фильтров
+        - Определение фильтра
+    12) Валидация формы
+        - ng-pattern
+    13) Работа со структурой DOM
+        - Навигация по странице:
+            - children()
+            - eq(index)
+            - find(tag)
+            - next()
+            - parent()
+            - html()
+            - text()
+        - Манипуляция элементами:
+            - addClass(name)
+            - attr(name)
+            - css(name)
+            - hasClass(name)
+            - prop(name)
+            - removeAttr(name)
+            - removeClass(name)
+            - text(value)
+            - toggleClass(name)
+            - val(), val(value)
+        - Создание и удаление элементов:
+            - angular.element(html)
+            - after(elements)
+            - append(elements)
+            - clone()
+            - prepend(elements)
+            - remove()
+            - replaceWith(element)
+            - wrap(element)
+        - Регистрация событий:
+            - on(events, handler)
+            - off(events, handler)
+            - triggerHandler(event)

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+    <style>
+        .odd { background-color: #fafafa; }
+        .even { background-color: silver; }
+    </style>
+</head>
+<body>
+    <div ng-controller="phoneController">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Модель</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="phone in phones" ng-class="$odd ? 'odd' : 'even'">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ phone.name }}</td>
+                    <td>{{ phone.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/libs/angular.min.js"></script>
+    <script>
+        angular.module('myApp', []);
+    </script>
+    <script src="js/controllers/phoneController.js"></script>
+</body>
+</html>

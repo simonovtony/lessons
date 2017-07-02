@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+    <style>
+        .odd { background-color: #fafafa; }
+        .even { background-color: silver; }
+    </style>
+</head>
+<body>
+    <div ng-controller="phoneController">
+        <ul>
+            <li ng-repeat="company in phones">
+                <p>{{ company.name }}</p>
+                <ul>
+                    <li ng-repeat="model in company.models">
+                        <b>{{ model.name }}</b>
+
+                        <p>Цена: {{ model.price }}</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </table>
+    </div>
+    <script src="js/libs/angular.min.js"></script>
+    <script>
+        angular.module('myApp', []);
+    </script>
+    <script src="js/controllers/phoneController.js"></script>
+</body>
+</html>

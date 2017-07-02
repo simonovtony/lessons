@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+</head>
+<body>
+    <div ng-controller="phoneController">
+        <p>Количество элементов: <span ng-bind="phones.length"></span></p>
+        <p>Первый элемент: <span ng-bind="phones[0].name"></span></p>
+        <input type="text" ng-model="phones[0].name">
+        <!--<input type="text" ng-model="property" />-->
+        <!--<input type="text" ng-model="object.property" />-->
+        <!--<input type="text" ng-model="object.property.property" />-->
+        <p ng-bind="phones[0].name"></p>
+        <p ng-bind-template="{{ phones[0].name}}: {{ phones[0].price }}"></p>
+        <p>{{ 1 + 2 }}</p>
+        <p ng-non-bindable>{{ 1 + 2 }}</p>
+    </div>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-sanitize.min.js"></script>
+    <script src="js/controllers/phoneController.js"></script>
+</body>
+</html>

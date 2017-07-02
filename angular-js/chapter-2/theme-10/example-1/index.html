@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.JS</title>
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+    </script>
+</head>
+<body>
+    <h2>Изменение регистра</h2>
+    <p>{{ 'Hello, World!' | lowercase }}</p>
+    <p>{{ 'Hello, World!' | uppercase }}</p>
+
+    <h2>Форматирование чисел</h2>
+    <p>{{ 234.5677 | number:1 }}</p>
+
+    <h2>Форматирование валюты</h2>
+    <p>{{ 234.5 | currency:'RUB' }}</p>
+
+    <h2>Форматирование дат</h2>
+    <p>{{ 1405405678756 | date:'yyyy-MM-dd' }}</p>
+</body>
+</html>
