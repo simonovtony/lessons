@@ -107,3 +107,5 @@
 
 3. Сервисы
     1) Использование сервисов
+        - app.factory('factoryName', function () { return {}; });
+        - app.service('serviceName', function () {
