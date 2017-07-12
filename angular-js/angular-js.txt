@@ -108,4 +108,40 @@
 3. Сервисы
     1) Использование сервисов
         - app.factory('factoryName', function () { return {}; });
-        - app.service('serviceName', function () {
+        - app.service('serviceName', function () { return {}; });
+    2) Сервис $http и ajax-запросы
+        - $http({ method: 'GET', url: '/question.json')
+            .then(function success(response) {}
+            , function error(response) {});
+        - $http({ method: 'POST', url: '/question.json', data: {name: 'John', age: 25})
+            .then(function success(response) {}
+            , function error(response) {});
+    3) Настройка ajax-запросов
+        - Сокращенные формы запросов:
+            - $http.get(url, config)
+            - $http.post(url, data, config)
+            - $http.delete(url, config)
+            - $http.put(url, data, config)
+            - $http.head(url, config)
+            - $http.jsonp(url, config)
+        - response
+            - data: представляет данные, полученные от сервера
+            - status: статусный код
+            - headers: возвращает функцию, получающие заголовки ответа
+            - config: обьект для конфигурации запроса
+            - statusText: текст статуса запроса
+        - config
+            - data: данные, которые посылаются на сервер. Если не установить данный параметр,
+                то оправляемые данные, например методом post, будут автоматически сериализироватся в json
+            - headers: обьект, представляющий набор заголовков
+            - method: HTTP-метод запроса
+            - params: устанавливает параметры строки URL
+            - timeout: устанавливает число миллисекунд действия действия запроса
+            - transformRequest: функция, которая обрабатывает данные запроса перед его осуществлением
+            - transformResponse: функция, которая обрабатывает ответ от сервера после осуществления запроса
+            - url: устанавливает запрашиваемый URL
+            - withCredentials: если параметр равен true, то в запросе также отправляются аутентификационные куки
+            - xsrfHeaderNamexsrfCookieName: используется для отправки CSRF-токенов
+    4) Отправка данных
+    5) Передача параметров в запрос
+    6) Сервис $q и promise-обьекты
