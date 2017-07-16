@@ -145,3 +145,37 @@
     4) Отправка данных
     5) Передача параметров в запрос
     6) Сервис $q и promise-обьекты
+        - d = $q.defer()
+        - d.promise
+        - d.resolve(values)
+        - d.reject(values)
+        - $q.all(promises)
+        - $q.resolve(values)
+        - $q.reject(values)
+    7) Сервис $timeout
+        - t = $timeout(function () {}, time)
+        - $timeout.cancel(promise)
+    8) Сервис для работы с DOM
+        - $anchorScroll
+        - $window
+        - $document
+        - $location
+            - $locationProvider.html5Mode(true).hashPrefix('*');
+            - $location.protocol()
+            - $location.url()
+            - $location.absUrl()
+            - $location.path()
+            - $location.search()
+            - $location.hash()
+            - $location.state()
+            - $location.path('/someNewPath'); $location.replace();
+            - event: $locationChangeStart
+            - event: $locationChangeSuccess
+        - promise = $interval(function () {}, time);
+        - $interval.cancel(promise)
+    9) Потенциально опасные данные
+        - $sce: удаляет потенциально опасные элементы и атрибуты из кода html
+        - $sanitize: заменяет потенциально опасные символы эскейп-последовательностями
+
+4. Маршрутизация
+    1) Представления и одностраничные приложения
