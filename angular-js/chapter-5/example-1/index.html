@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Dependency Injector</title>
+    </head>
+    <body>
+        <div ng-controller="myController">
+            <button ng-click="buttonClick()">
+                Не нажимать
+            </button>
+        </div>
+        <script src="angular.min.js"></script>
+        <script>
+            angular.module('myApp', [])
+                    .factory('dataService', function () {
+                        return {
+                            question: {
+                                text: 'Какой js-фреймворк лучше всех?',
+                                author: 'Иван Иванов',
+                                date: '20/10/2013'
+                            }
+                        };
+                    })
+                    .controller('myController', function ($scope, $injector) {
+                        var counter = 0;
+                        var getData = function (dataService, message) {
+                            if (counter % 2 == 0) {
+                                console.log(dataService.question);
+                            } else {
+                                console.log(message);
+                            }
+                            counter++;
+                        };
+                        $scope.buttonClick = function () {
+                            var locals = { message: 'Привет Ир' };
+                            $injector.invoke(getData, null, locals);
+
+                            var deps = $injector.annotate(getData);
+                            var args = [];
+                            for (var i = 0; i < deps.length; i++) {
+                                if ($injector.has(deps[i])) {
+                                    args.push($injector.get(deps[i]));
+                                    console.log('Сервис: ' + deps[i]);
+                                } else if (deps[i] == 'message') {
+                                    args.push('Привет мир');
+                                    console.log('' + deps[i]);
+                                }
+                            }
+                            getData.apply(null, args);
+                        };
+                    });
+        </script>
+    </body>
+</html>
